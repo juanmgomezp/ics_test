@@ -2,9 +2,9 @@ const Router = require('express').Router;
 
 const CalendarRoute = Router();
 
-const eol = "\r\n";
+const eol = "\r";
 const content = `
-BEGIN:VCALENDAR
+BEGIN:VCALENDAR${eol}
 VERSION:2.0
 PRODID:-//hacksw/handcal//NONSGML v1.0//EN
 METHOD:PUBLISH
