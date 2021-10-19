@@ -4,10 +4,10 @@ const CalendarRoute = Router();
 
 const eol = "\r\n";
 const content = `
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//hacksw/handcal//NONSGML v1.0//EN
-METHOD:PUBLISH
+BEGIN:VCALENDAR\r\n
+VERSION:2.0\r\n
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN\r\n
+METHOD:PUBLISH\r\n
 BEGIN:VEVENT
 UID:20211015T172345Z-AF23B2@nasa.com
 DTSTAMP:20211015T172345Z
