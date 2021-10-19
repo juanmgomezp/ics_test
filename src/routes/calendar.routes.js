@@ -34,7 +34,7 @@ CalendarRoute.get('/calendar/calendar.ics', (req, res) => {
         'x-frame-options': 'SAMEORIGIN'
     });
 
-    res.send(content.toString());
+    res.send(content);
     console.dir(res.get('content-type'));
 })
 
