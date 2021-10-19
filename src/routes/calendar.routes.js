@@ -3,11 +3,11 @@ const Router = require('express').Router;
 const CalendarRoute = Router();
 
 const eol = "\r\n";
-const content = `
-BEGIN:VCALENDAR\r\n
-VERSION:2.0\r\n
-PRODID:-//hacksw/handcal//NONSGML v1.0//EN\r\n
-METHOD:PUBLISH\r\n
+const calendar = `
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+METHOD:PUBLISH
 BEGIN:VEVENT
 UID:20211015T172345Z-AF23B2@nasa.com
 DTSTAMP:20211015T172345Z
@@ -25,6 +25,8 @@ END:VEVENT
 END:VCALENDAR
 `;
 
+const content = calendar.replace(["\r\n", "\r", "\n"], "\r\n");
+
 CalendarRoute.get('/calendar/calendar.ics', (req, res) => {
     res.set({
         'content-type':'text/calendar; method=PUBLISH; charset=utf-8',
@@ -36,7 +38,7 @@ CalendarRoute.get('/calendar/calendar.ics', (req, res) => {
         'x-frame-options': 'SAMEORIGIN'
     });
 
-    res.send(content.toString());
+    res.send(content);
     console.dir(res.get('content-type'));
 })
 
@@ -50,7 +52,7 @@ CalendarRoute.post('/calendar/calendar.ics', (req, res) => {
         'x-xss-protection': '0',
         'x-frame-options': 'SAMEORIGIN'
     });
-    res.send(content.toString());
+    res.send(content);
     console.dir(res.get('content-type'));
 })
 
