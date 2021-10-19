@@ -5,6 +5,31 @@ const fs = require('fs');
 
 const CalendarRoute = Router();
 
+const eol = "\r\n";
+const content = `
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20211015T172345Z-AF23B2@nasa.com
+DTSTAMP:20211015T172345Z
+DTSTART:20211016T170000Z
+DTEND:20211017T040000Z
+SUMMARY:Test Event
+END:VEVENT
+BEGIN:VEVENT
+UID:20211018T112345Z-AF23B2@nasa.com
+DTSTAMP:20211018T112345Z
+DTSTART:20211019T180000Z
+DTEND:20211021T160000Z
+SUMMARY:Test Event 777
+END:VEVENT
+END:VCALENDAR
+`;
+
+console.log(content);
+
 /* const calendarList = [
     'bugambilias', 
     'areca',
