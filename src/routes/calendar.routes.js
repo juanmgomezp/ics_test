@@ -4,9 +4,9 @@ const CalendarRoute = Router();
 
 const eol = "\r\n";
 const calendar = `
-BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+BEGIN:VCALENDAR\r\n
+VERSION:2.0\r\n
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN\r\n
 METHOD:PUBLISH
 BEGIN:VEVENT
 UID:20211015T172345Z-AF23B2@nasa.com
@@ -26,7 +26,7 @@ END:VCALENDAR
 `;
 
 const content = calendar.replace(["\r\n", "\r", "\n"], "\r\n");
-
+console.log(content);
 CalendarRoute.get('/calendar/calendar.ics', (req, res) => {
     res.set({
         'content-type':'text/calendar; method=PUBLISH; charset=utf-8',
@@ -38,7 +38,7 @@ CalendarRoute.get('/calendar/calendar.ics', (req, res) => {
         'x-frame-options': 'SAMEORIGIN'
     });
 
-    res.send(content);
+    res.send(content.toString());
     console.dir(res.get('content-type'));
 })
 
