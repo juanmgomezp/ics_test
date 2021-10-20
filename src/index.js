@@ -12,7 +12,7 @@ server.get('/', (req, res) => {
     res.json('Hello World');
 });
 
-server.use(morgan('dev'));
+server.use(morgan('common'));
 /* server.use(cors({
     origin: '*',
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
