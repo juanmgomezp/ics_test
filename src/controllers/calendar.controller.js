@@ -18,7 +18,8 @@ const generateCalendar = async (req, res) => {
                 let event = {
                     start: new Date(item.start),
                     end: new Date(item.end),
-                    sequence: 1,
+                    sequence: 0,
+                    lastModified: new Date(),
                     id: item.id,
                     summary: item.guest,
                     description: `Reservation for ${item.guest}`,                
