@@ -18,6 +18,7 @@ const generateCalendar = async (req, res) => {
                 let event = {
                     start: new Date(item.start),
                     end: new Date(item.end),
+                    sequence: 1,
                     id: item.id,
                     summary: item.guest,
                     description: `Reservation for ${item.guest}`,                
@@ -39,12 +40,7 @@ const generateCalendar = async (req, res) => {
             'content-type':'text/calendar; method=PUBLISH; charset=utf-8',
             'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
             'pragma': 'no-cache',
-            'Mime-Version':'1.0',
-            'Content-Transfer-Encoding': 'quoted-printable',
             'content-disposition': 'inline; filename=calendar.ics',
-            'x-content-type-options': 'nosniff',
-            'x-xss-protection': '0',
-            'x-frame-options': 'SAMEORIGIN'
         });
         
         cal.serve(res);
