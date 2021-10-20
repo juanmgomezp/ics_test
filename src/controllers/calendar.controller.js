@@ -37,6 +37,8 @@ const generateCalendar = async (req, res) => {
         
         res.set({
             'content-type':'text/calendar; method=PUBLISH; charset=utf-8',
+            'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+            'pragma': 'no-cache',
             'Mime-Version':'1.0',
             'Content-Transfer-Encoding': 'quoted-printable',
             'content-disposition': 'inline; filename=calendar.ics',
