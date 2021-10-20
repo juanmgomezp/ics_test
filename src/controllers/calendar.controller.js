@@ -20,7 +20,7 @@ const generateCalendar = async (req, res) => {
                     end: new Date(item.end),
                     id: item.id,
                     summary: item.guest,
-                    description: `Reservation for ${item.guest}`,
+                    description: `Reservation for ${item.guest}`,                
                     ur: 'https://www.otl.io'                    
                 }
                 events.push(event);
@@ -31,6 +31,7 @@ const generateCalendar = async (req, res) => {
             prodId: `//${roomId}//otl.io//EN`, 
             method: 'PUBLISH',
             name: `${roomFounded.name}`,
+            ttl: 600,
             events: events
         });
         
