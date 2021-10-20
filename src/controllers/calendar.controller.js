@@ -28,7 +28,7 @@ const generateCalendar = async (req, res) => {
             });
         }
 
-        const url = `http://ec2-3-21-228-148.us-east-2.compute.amazonaws.com/ical/${roomId}/calendar/calendar.ics`; 
+        const url = `http://3.21.228.148/ical/${roomId}`; 
 
         const cal = ical({
             prodId: `//${roomId}//otl.io//EN`, 

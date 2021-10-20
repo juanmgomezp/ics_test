@@ -3,6 +3,6 @@ const generateCalendar = require('../controllers/calendar.controller')
 
 const CalendarRoute = Router();
 
-CalendarRoute.get('/:roomId/calendar/calendar.ics', generateCalendar)
+CalendarRoute.get('/:roomId', generateCalendar)
 
 module.exports = CalendarRoute;
