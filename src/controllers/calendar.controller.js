@@ -31,7 +31,7 @@ const generateCalendar = async (req, res) => {
             prodId: `//${roomId}//otl.io//EN`, 
             method: 'PUBLISH',
             name: `${roomFounded.name}`,
-            ttl: 600,
+            ttl: 60,
             events: events
         });
         
