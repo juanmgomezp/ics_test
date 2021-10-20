@@ -34,6 +34,7 @@ const generateCalendar = async (req, res) => {
             prodId: `//${roomId}//otl.io//EN`, 
             method: 'PUBLISH',
             name: `${roomFounded.name}`,
+            timezone: 'America/Mexico_City',
             scale: 'GREGORIAN',
             source: url,
             url: url,
