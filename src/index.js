@@ -2,6 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
+//requerimos la conexión a la base de datos
+require('./database');
+
 const server = express();
 const calendarRoute = require('./routes/calendar.routes');
 
