@@ -41,15 +41,7 @@ const generateCalendar = async (req, res) => {
             events: events
         });
 
-        res.set({
-            'content-type':'text/calendar; method=PUBLISH; charset=utf-8',
-            'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
-            'pragma': 'no-cache',
-            'content-disposition': 'inline; filename=calendar.ics',
-        });
-        
-        cal.serve(res);
-        
+        cal.serve(res);        
     } catch (error) {
        console.log(error); 
     }
