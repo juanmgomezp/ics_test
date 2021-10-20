@@ -28,15 +28,19 @@ const generateCalendar = async (req, res) => {
             });
         }
 
+        const url = `http://ec2-3-21-228-148.us-east-2.compute.amazonaws.com/ical/${roomId}/calendar/calendar.ics`; 
+
         const cal = ical({
             prodId: `//${roomId}//otl.io//EN`, 
             method: 'PUBLISH',
             name: `${roomFounded.name}`,
-            source: `http://ec2-3-21-228-148.us-east-2.compute.amazonaws.com/ical/${roomId}/calendar/calendar.ics`,
+            scale: 'GREGORIAN',
+            source: url,
+            url: url,
             ttl: 60,
             events: events
         });
-        
+
         res.set({
             'content-type':'text/calendar; method=PUBLISH; charset=utf-8',
             'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
