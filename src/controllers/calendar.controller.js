@@ -22,7 +22,7 @@ const generateCalendar = async (req, res) => {
                     id: item.id,
                     summary: item.guest,
                     description: `Reservation for ${item.guest}`,                
-                    ur: 'https://www.otl.io'                    
+                    url: 'https://www.otl.io'                    
                 }
                 events.push(event);
             });
@@ -32,6 +32,7 @@ const generateCalendar = async (req, res) => {
             prodId: `//${roomId}//otl.io//EN`, 
             method: 'PUBLISH',
             name: `${roomFounded.name}`,
+            source: `http://ec2-3-21-228-148.us-east-2.compute.amazonaws.com/ical/${roomId}/calendar/calendar.ics`,
             ttl: 60,
             events: events
         });
