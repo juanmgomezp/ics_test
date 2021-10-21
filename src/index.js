@@ -14,6 +14,7 @@ server.get('/', (req, res) => {
 });
 
 server.use(morgan('common'));
+server.use(express.json());
 /* server.use(cors({
     origin: '*',
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
