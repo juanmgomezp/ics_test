@@ -7,6 +7,7 @@ require('./database');
 
 const server = express();
 const calendarRoute = require('./routes/calendar.routes');
+const reservationRoute = require('./routes/reservation.routes');
 
 server.get('/', (req, res) => {
     res.json('Hello World');
@@ -19,6 +20,7 @@ server.use(morgan('common'));
 })) */
 
 server.use('/ical', calendarRoute);
+server.use('/api', reservationRoute);
 
 server.listen(8080, () => {
     console.log('Server on port: ', 8080);

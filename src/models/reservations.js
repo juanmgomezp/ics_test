@@ -13,6 +13,10 @@ const reservationSchema = new Schema({
         type: String,
         required: true
     },  
+    sequence: {
+        type: Number,
+        required: true        
+    },
     room: {
         ref: "Room",
         type: Schema.Types.ObjectId,
